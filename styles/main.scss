@@ -1,0 +1,96 @@
+@use 'sass:map';
+@import 'settings/variables';
+@import 'grids';
+
+$primary: red;
+$secondary: black;
+
+// .red {
+//   color: $primary;
+// }
+
+// div img {
+//   max-width: 100%;
+// }
+
+// Nesting
+
+// div {
+//   img {
+//     max-width: 100%;
+//   }
+// }
+// .navbar {}
+
+// .navbar__logo {}
+
+// .navbar__link {}
+
+// .navbar__link--selected {}
+
+// .navbar {
+//   &__logo {
+//     color: $primary;
+//   }
+
+//   &__link {
+//     &--selected {
+//       color: $primary;
+//     }
+//   }
+// }
+
+// Mixins
+
+// @mixin mq($color) {
+//   color: $color;
+// }
+
+// .primary-color {
+//   @include mq(blue);
+// }
+
+// $breakpoints: (
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px
+// );
+// SASS MAP
+
+// @mixin mq($key) {
+//   $size: map.get($breakpoints, $key);
+
+//   @media screen and (max-width: $size){
+//     @content;
+//   }
+// }
+
+// .something {
+//   @include mq(lg) {
+//     color: $primary;
+//     border: 1px solid red;
+//     display: flex;
+//   }
+// }
+
+// Inheritence
+
+// %button-core {
+//   padding: 1rem 1.5rem;
+//   border-radius: 0.5rem;
+// }
+
+// .button-primary {
+//   @extend %button-core;
+
+//   background: blue;
+//   color: white;
+// }
+
+// .button-secondary {
+//   @extend %button-core;
+
+//   border: 1px solid blue;
+//   color: blue;
+// }

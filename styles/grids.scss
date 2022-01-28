@@ -1,0 +1,46 @@
+@mixin create-column($size: false, $columns: $grid-columns) {
+  @if $size {
+    flex: 0 0 auto;
+    width: percentage(calc($size / $columns));
+  } @else {
+    flex: 1 1 0;
+    width: auto;
+  }
+}
+
+.col {
+  @include create-column();
+}
+
+// @for $i from 1 through 12 {
+//   // for loop runs from 1 to 12
+//   @each $label, $size in $breakpoints {
+//     // each loop iterates over breakpoints
+
+//     @media screen and (max-width: $size){
+//       .col-#{$label}-#{$i} {
+//         @include create-column($i);
+//       }
+//     }
+//   }
+
+//   .col-#{$i} {
+//     @include create-column($i);
+//   }
+// }
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include create-column($i);
+  }
+}
+
+@each $label, $size in $breakpoints {
+  @media screen and (min-width: $size){
+    @for $i from 1 through 12 {
+      .col-#{$label}-#{$i} {
+        @include create-column($i);
+      }
+    }
+  }
+}
